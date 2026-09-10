@@ -1,102 +1,127 @@
 [
   {
     "slug": "shop",
-    "name": "فروشگاهی"
+    "name": "فروشگاهی",
+    "title": "قالب‌های فروشگاهی"
   },
   {
     "slug": "business",
-    "name": "شرکتی"
+    "name": "شرکتی",
+    "title": "قالب‌های شرکتی"
   },
   {
     "slug": "admin",
-    "name": "مدیریت"
+    "name": "مدیریت",
+    "title": "قالب‌های مدیریت"
   },
   {
     "slug": "onepage",
-    "name": "تک صفحه‌ای"
+    "name": "تک صفحه‌ای",
+    "title": "قالب‌های تک صفحه‌ای"
   },
   {
     "slug": "personal",
-    "name": "شخصی"
+    "name": "شخصی",
+    "title": "قالب‌های شخصی"
   },
   {
     "slug": "elearning",
-    "name": "آموزشی"
+    "name": "آموزشی",
+    "title": "قالب‌های آموزشی"
   },
   {
     "slug": "landing",
-    "name": "لندینگ"
+    "name": "لندینگ",
+    "title": "قالب‌های لندینگ"
   },
   {
     "slug": "coming-soon",
-    "name": "در دست ساخت"
+    "name": "در دست ساخت",
+    "title": "قالب‌های در دست ساخت"
   },
   {
     "slug": "multipage",
-    "name": "چند منظوره"
+    "name": "چند منظوره",
+    "title": "قالب‌های چند منظوره"
   },
   {
     "slug": "news",
-    "name": "خبری"
+    "name": "خبری",
+    "title": "قالب‌های خبری"
   },
   {
     "slug": "portfolio",
-    "name": "گالری"
+    "name": "گالری",
+    "title": "قالب‌های گالری"
   },
   {
     "slug": "creative",
-    "name": "خلاقانه"
+    "name": "خلاقانه",
+    "title": "قالب‌های خلاقانه"
   },
   {
     "slug": "entertainment",
-    "name": "سرگرمی"
+    "name": "سرگرمی",
+    "title": "قالب‌های سرگرمی"
   },
   {
     "slug": "mobile",
-    "name": "موبایل"
+    "name": "موبایل",
+    "title": "قالب‌های موبایل"
   },
   {
     "slug": "hosting",
-    "name": "هاستینگ"
+    "name": "هاستینگ",
+    "title": "قالب‌های هاستینگ"
   },
   {
     "slug": "login",
-    "name": "صفحه ورود"
+    "name": "صفحه ورود",
+    "title": "قالب‌های صفحه ورود"
   },
   {
     "slug": "404",
-    "name": "۴۰۴"
+    "name": "۴۰۴",
+    "title": "قالب‌های ۴۰۴"
   },
   {
     "slug": "domain-sale",
-    "name": "فروش دامنه"
+    "name": "فروش دامنه",
+    "title": "قالب‌های فروش دامنه"
   },
   {
     "slug": "real-estate",
-    "name": "املاک"
+    "name": "املاک",
+    "title": "قالب‌های املاک"
   },
   {
     "slug": "hotel",
-    "name": "هتل"
+    "name": "هتل",
+    "title": "قالب‌های هتل"
   },
   {
     "slug": "guild",
-    "name": "اصناف"
+    "name": "اصناف",
+    "title": "قالب‌های اصناف"
   },
   {
     "slug": "music-movie",
-    "name": "موزیک و فیلم"
+    "name": "موزیک و فیلم",
+    "title": "قالب‌های موزیک و فیلم"
   },
   {
     "slug": "listing",
-    "name": "آگهی"
+    "name": "آگهی",
+    "title": "قالب‌های آگهی"
   },
   {
     "slug": "medical",
-    "name": "پزشکی"
+    "name": "پزشکی",
+    "title": "قالب‌های پزشکی"
   },
   {
     "slug": "special-pages",
-    "name": "صفحات خاص"
+    "name": "صفحات خاص",
+    "title": "قالب‌های صفحات خاص"
   }
 ]
