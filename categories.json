@@ -2,126 +2,151 @@
   {
     "slug": "shop",
     "name": "فروشگاهی",
-    "title": "قالب‌های فروشگاهی"
+    "description": "فروش آنلاین و فروشگاه اینترنتی",
+    "url": "?category=shop"
   },
   {
     "slug": "business",
     "name": "شرکتی",
-    "title": "قالب‌های شرکتی"
+    "description": "سایت معرفی شرکت و کسب‌وکار",
+    "url": "?category=business"
   },
   {
     "slug": "admin",
     "name": "مدیریت",
-    "title": "قالب‌های مدیریت"
+    "description": "داشبورد و پنل‌های مدیریتی",
+    "url": "?category=admin"
   },
   {
     "slug": "onepage",
     "name": "تک صفحه‌ای",
-    "title": "قالب‌های تک صفحه‌ای"
+    "description": "وب‌سایت‌های تک‌صفحه‌ای",
+    "url": "?category=onepage"
   },
   {
     "slug": "personal",
     "name": "شخصی",
-    "title": "قالب‌های شخصی"
+    "description": "رزومه و معرفی شخصی",
+    "url": "?category=personal"
   },
   {
     "slug": "elearning",
     "name": "آموزشی",
-    "title": "قالب‌های آموزشی"
+    "description": "آموزشگاه و پلتفرم آموزشی",
+    "url": "?category=elearning"
   },
   {
     "slug": "landing",
     "name": "لندینگ",
-    "title": "قالب‌های لندینگ"
+    "description": "صفحات فرود و کمپین",
+    "url": "?category=landing"
   },
   {
     "slug": "coming-soon",
     "name": "در دست ساخت",
-    "title": "قالب‌های در دست ساخت"
+    "description": "صفحات معرفی و پیش از راه‌اندازی",
+    "url": "?category=coming-soon"
   },
   {
     "slug": "multipage",
     "name": "چند منظوره",
-    "title": "قالب‌های چند منظوره"
+    "description": "قالب‌های چندمنظوره",
+    "url": "?category=multipage"
   },
   {
     "slug": "news",
     "name": "خبری",
-    "title": "قالب‌های خبری"
+    "description": "مجله و وب‌سایت خبری",
+    "url": "?category=news"
   },
   {
     "slug": "portfolio",
     "name": "گالری",
-    "title": "قالب‌های گالری"
+    "description": "نمونه‌کار و پورتفولیو",
+    "url": "?category=portfolio"
   },
   {
     "slug": "creative",
     "name": "خلاقانه",
-    "title": "قالب‌های خلاقانه"
+    "description": "تجربه‌های خلاق و متفاوت",
+    "url": "?category=creative"
   },
   {
     "slug": "entertainment",
     "name": "سرگرمی",
-    "title": "قالب‌های سرگرمی"
+    "description": "سرگرمی و محتوای تعاملی",
+    "url": "?category=entertainment"
   },
   {
     "slug": "mobile",
     "name": "موبایل",
-    "title": "قالب‌های موبایل"
+    "description": "معرفی اپلیکیشن و محصولات موبایلی",
+    "url": "?category=mobile"
   },
   {
     "slug": "hosting",
     "name": "هاستینگ",
-    "title": "قالب‌های هاستینگ"
+    "description": "هاست، دامنه و خدمات زیرساخت",
+    "url": "?category=hosting"
   },
   {
     "slug": "login",
     "name": "صفحه ورود",
-    "title": "قالب‌های صفحه ورود"
+    "description": "ورود، ثبت‌نام و احراز هویت",
+    "url": "?category=login"
   },
   {
     "slug": "404",
     "name": "۴۰۴",
-    "title": "قالب‌های ۴۰۴"
+    "description": "صفحات خطای سفارشی",
+    "url": "?category=404"
   },
   {
     "slug": "domain-sale",
     "name": "فروش دامنه",
-    "title": "قالب‌های فروش دامنه"
+    "description": "صفحات فروش و معرفی دامنه",
+    "url": "?category=domain-sale"
   },
   {
     "slug": "real-estate",
     "name": "املاک",
-    "title": "قالب‌های املاک"
+    "description": "املاک و پروژه‌های ساختمانی",
+    "url": "?category=real-estate"
   },
   {
     "slug": "hotel",
     "name": "هتل",
-    "title": "قالب‌های هتل"
+    "description": "هتل، اقامتگاه و رزرو",
+    "url": "?category=hotel"
   },
   {
     "slug": "guild",
     "name": "اصناف",
-    "title": "قالب‌های اصناف"
+    "description": "کسب‌وکارهای صنفی",
+    "url": "?category=guild"
   },
   {
     "slug": "music-movie",
     "name": "موزیک و فیلم",
-    "title": "قالب‌های موزیک و فیلم"
+    "description": "موسیقی، فیلم و رسانه",
+    "url": "?category=music-movie"
   },
   {
     "slug": "listing",
     "name": "آگهی",
-    "title": "قالب‌های آگهی"
+    "description": "آگهی و دایرکتوری",
+    "url": "?category=listing"
   },
   {
     "slug": "medical",
     "name": "پزشکی",
-    "title": "قالب‌های پزشکی"
+    "description": "پزشکان، کلینیک و سلامت",
+    "url": "?category=medical"
   },
   {
     "slug": "special-pages",
     "name": "صفحات خاص",
-    "title": "قالب‌های صفحات خاص"
+    "description": "صفحات ویژه و کاربردی",
+    "url": "?category=special-pages"
   }
 ]

@@ -1,5 +1,10 @@
 [
   {
-    "file": "Relax/index-shop-digikala.html"
+    "file": "Relax/index-shop-digikala.html",
+    "title": "Shop Digikala"
+  },
+  {
+    "file": "Relax/index-404-html.html",
+    "title": "404 HTML"
   }
 ]
