@@ -3,43 +3,144 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FreeThemes | گالری قالب‌های رایگان</title>
-<meta name="description" content="گالری قالب‌های رایگان FreeThemes">
+<title>قالب HTML رایگان | دانلود قالب سایت رایگان | FreeThemes</title>
+<meta name="description" content="آرشیو قالب‌های HTML رایگان و قالب سایت آماده برای شرکت، فروشگاه، آموزش، پزشکی، املاک، گردشگری، فناوری و نمونه‌کار؛ مشاهده و دانلود مستقیم قالب‌ها.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://freethemes.ir/">
+<meta name="theme-color" content="#070b14">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:site_name" content="FreeThemes">
+<meta property="og:title" content="قالب HTML رایگان | دانلود قالب سایت رایگان | FreeThemes">
+<meta property="og:description" content="آرشیو قالب‌های HTML رایگان و آماده استفاده، دسته‌بندی‌شده برای حوزه‌های مختلف.">
+<meta property="og:url" content="https://freethemes.ir/">
+<meta property="og:image" content="https://freethemes.ir/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="قالب HTML رایگان | FreeThemes">
+<meta name="twitter:description" content="آرشیو قالب‌های HTML رایگان و آماده استفاده.">
+<meta name="twitter:image" content="https://freethemes.ir/assets/og-cover.jpg">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "@id":"https://freethemes.ir/#website",
+  "url":"https://freethemes.ir/",
+  "name":"FreeThemes",
+  "alternateName":"فری‌تمز",
+  "inLanguage":"fa-IR",
+  "description":"آرشیو قالب‌های HTML رایگان و قالب‌های آماده سایت.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":{
+      "@type":"EntryPoint",
+      "urlTemplate":"https://freethemes.ir/?q={search_term_string}"
+    },
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "@id":"https://freethemes.ir/#organization",
+  "name":"FreeThemes",
+  "url":"https://freethemes.ir/",
+  "logo":{
+    "@type":"ImageObject",
+    "url":"https://freethemes.ir/assets/logo.png"
+  }
+}
+</script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container topbar">
-    <a class="logo" href="./">Free<span>Themes</span></a>
-    <div class="badge">قالب‌های رایگان</div>
+<a class="skip" href="#main">پرش به محتوای اصلی</a>
+
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="/" aria-label="FreeThemes - صفحه اصلی">Free<span>Themes</span></a>
+    <nav aria-label="منوی اصلی">
+      <a class="active" href="#archive">آرشیو قالب‌ها</a>
+      <a href="#categories">دسته‌بندی‌ها</a>
+      <a href="#about">درباره قالب‌های رایگان</a>
+    </nav>
+    <span class="nav-badge">قالب HTML رایگان</span>
   </div>
 </header>
 
+<main id="main">
 <section class="hero">
   <div class="container">
-    <div class="eyebrow">FREE HTML TEMPLATES</div>
-    <h1>قالب مناسب خودت را پیدا کن</h1>
-    <p>قالب‌ها را بر اساس حوزه فعالیت و دسته‌بندی تخصصی پیدا و مستقیماً مشاهده کنید.</p>
-    <div class="search-wrap">
-      <input id="search" type="search" placeholder="جست‌وجوی قالب، دسته‌بندی یا عنوان..." autocomplete="off">
+    <div class="eyebrow">FREE HTML TEMPLATES · قالب سایت رایگان</div>
+    <h1>آرشیو قالب‌های HTML رایگان</h1>
+    <p class="lead">مجموعه‌ای از قالب‌های رایگان سایت برای طراحی وب، کسب‌وکار، فروشگاه، آموزش، پزشکی، املاک، گردشگری، فناوری، وبلاگ و نمونه‌کار. قالب مناسب خود را پیدا کنید و پیش‌نمایش آن را ببینید.</p>
+    <form class="search-box" id="searchForm" role="search">
+      <span aria-hidden="true">⌕</span>
+      <label class="sr-only" for="search">جست‌وجوی قالب</label>
+      <input id="search" name="q" type="search" placeholder="جست‌وجوی قالب، دسته‌بندی یا کاربرد..." autocomplete="off">
+    </form>
+    <div class="stats" aria-label="آمار آرشیو">
+      <div><strong id="templateCount">۰</strong><span>قالب رایگان</span></div>
+      <div><strong id="categoryCount">۰</strong><span>دسته‌بندی</span></div>
+      <div><strong>HTML</strong><span>قالب‌های آماده</span></div>
     </div>
   </div>
 </section>
 
-<main class="container">
-  <div class="toolbar">
-    <div id="breadcrumb" class="breadcrumb"></div>
-    <button id="back" class="back" type="button">بازگشت</button>
+<section id="categories" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">BROWSE TEMPLATES</div><h2>دسته‌بندی قالب‌های سایت</h2></div>
+      <button id="showAll" class="outline-btn" type="button">مشاهده همه قالب‌ها</button>
+    </div>
+    <p class="section-intro">قالب HTML رایگان موردنیاز خود را بر اساس حوزه فعالیت انتخاب کنید. هر دسته می‌تواند زیر‌دسته‌های تخصصی و قالب‌های مرتبط داشته باشد.</p>
+    <div id="categoryGrid" class="category-grid" aria-live="polite">
+      <div class="state">در حال بارگذاری دسته‌بندی‌ها...</div>
+    </div>
   </div>
-  <div id="content">
-    <div class="state">در حال بارگذاری...</div>
+</section>
+
+<section id="archive" class="section archive-section">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">HTML TEMPLATE ARCHIVE</div><h2 id="archiveTitle">همه قالب‌های رایگان</h2></div>
+      <div class="result-info" id="resultInfo"></div>
+    </div>
+    <div class="filters" aria-label="مرتب‌سازی قالب‌ها">
+      <button class="filter active" data-filter="all" type="button">همه قالب‌ها</button>
+      <button class="filter" data-filter="newest" type="button">جدیدترین</button>
+      <button class="filter" data-filter="popular" type="button">پربازدید</button>
+    </div>
+    <div id="archiveGrid" class="archive-grid" aria-live="polite">
+      <div class="state">در حال بارگذاری قالب‌ها...</div>
+    </div>
   </div>
+</section>
+
+<section id="about" class="seo-content section">
+  <div class="container prose">
+    <div class="kicker">ABOUT FREETHEMES</div>
+    <h2>آرشیو قالب سایت رایگان برای طراحی وب</h2>
+    <p>FreeThemes یک آرشیو برای دسترسی سریع به قالب‌های HTML رایگان است. هدف این آرشیو، ساده‌کردن پیدا کردن قالب مناسب برای انواع وب‌سایت و پروژه‌های طراحی وب است؛ از صفحات شرکتی و خدمات تخصصی تا فروشگاه، آموزش، پزشکی، گردشگری، فناوری و نمونه‌کار.</p>
+    <p>قالب‌های سایت در این آرشیو بر اساس حوزه و زیر‌دسته مرتب می‌شوند تا بتوانید قبل از استفاده، گزینه‌های مرتبط را مقایسه و پیش‌نمایش قالب موردنظر را مشاهده کنید.</p>
+    <div class="seo-columns">
+      <div><h3>قالب HTML رایگان</h3><p>برای پروژه‌هایی که به یک ساختار آماده و قابل توسعه نیاز دارند، قالب HTML می‌تواند نقطه شروع مناسبی برای طراحی و پیاده‌سازی وب‌سایت باشد.</p></div>
+      <div><h3>قالب سایت آماده</h3><p>با دسته‌بندی موضوعی، انتخاب قالب برای کسب‌وکار، فروشگاه، شرکت، خدمات، محتوا و سایر کاربردها سریع‌تر انجام می‌شود.</p></div>
+      <div><h3>آرشیو قالب‌های وب</h3><p>ساختار آرشیو به‌صورت دسته‌بندی‌شده طراحی شده است تا مسیر جست‌وجو از حوزه کلی به زیر‌دسته و سپس قالب مرتبط ادامه پیدا کند.</p></div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="container">FreeThemes — گالری قالب‌های رایگان</div>
+  <div class="container footer-inner">
+    <a class="logo" href="/">Free<span>Themes</span></a>
+    <p>آرشیو قالب‌های HTML رایگان و قالب‌های آماده سایت</p>
+  </div>
 </footer>
-
 <script src="app.js"></script>
 </body>
 </html>

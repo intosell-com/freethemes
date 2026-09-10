@@ -1,21 +1,23 @@
-# FreeThemes — GitHub Only
+# FreeThemes — SEO Max GitHub Pages
 
-نسخه کاملاً عمومی و بدون API، Vercel و Arvan.
+نسخه سئو-محور صفحه اصلی آرشیو قالب‌ها.
 
-فایل‌ها:
-- index.html
-- app.js
-- style.css
-- categories.json
-- demos.json
-- 404.html
-
-همه فایل‌های قالب، تصاویر و دموها را داخل همین Repository قرار دهید.
-
-GitHub Pages:
-Settings → Pages → Deploy from branch → main → / (root)
+ویژگی‌ها:
+- title و meta description بهینه
+- canonical
+- robots
+- Open Graph و Twitter Card
+- Schema.org WebSite + SearchAction
+- ساختار معنایی H1/H2/H3
+- محتوای متنی قابل ایندکس
+- جست‌وجوی آرشیو با query string
+- sitemap.xml
+- robots.txt
+- .nojekyll
+- JSONهای عمومی و مستقیم از GitHub Pages
 
 دامنه:
 https://freethemes.ir/
 
-نکته: در این معماری همه فایل‌ها عمومی و قابل مشاهده/دانلود هستند.
+نکته:
+برای سئوی واقعی هر قالب، بهتر است هر قالب یک URL مستقل و قابل crawl داشته باشد و برای هر صفحه قالب title، description، canonical و در صورت وجود تصویر، Open Graph جداگانه تعریف شود.
