@@ -1,0 +1,30 @@
+{
+  "demos": [
+    {
+      "title": "قالب شرکتی مدرن",
+      "description": "معرفی شرکت، خدمات و پروژه‌ها",
+      "category": "company-profile",
+      "subcategory": "company-profile-1",
+      "image": "themes/company-profile/preview.jpg",
+      "url": "themes/company-profile/index.html",
+      "tags": [
+        "modern",
+        "corporate",
+        "responsive"
+      ]
+    },
+    {
+      "title": "قالب فناوری و نرم‌افزار",
+      "description": "مناسب شرکت‌های نرم‌افزاری و SaaS",
+      "category": "software",
+      "subcategory": "software-2",
+      "image": "themes/software/preview.jpg",
+      "url": "themes/software/index.html",
+      "tags": [
+        "software",
+        "saas",
+        "startup"
+      ]
+    }
+  ]
+}

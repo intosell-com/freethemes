@@ -1,326 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1020">
-<title>گالری قالب‌های وب</title>
-
-<style>
-:root{
-  --bg:#f5f7fb;
-  --surface:#fff;
-  --surface-2:#f8fafc;
-  --text:#0f172a;
-  --muted:#64748b;
-  --line:#e5e7eb;
-  --primary:#635bff;
-  --primary-2:#8b5cf6;
-  --dark:#0b1020;
-  --shadow:0 18px 55px rgba(15,23,42,.09);
-  --radius:22px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Tahoma,"Segoe UI",Arial,sans-serif;
-}
-button,input{font:inherit}
-button{cursor:pointer}
-a{text-decoration:none;color:inherit}
-
-.hero{
-  position:relative;overflow:hidden;color:#fff;
-  background:
-    radial-gradient(circle at 12% 18%,rgba(99,91,255,.32),transparent 30%),
-    radial-gradient(circle at 88% 12%,rgba(139,92,246,.25),transparent 28%),
-    linear-gradient(135deg,#080d1c,#111827 58%,#17132e);
-}
-.hero:after{
-  content:"";position:absolute;inset:auto -10% -160px;
-  height:300px;background:var(--bg);
-  border-radius:50% 50% 0 0/55% 55% 0 0;
-}
-.nav{
-  position:relative;z-index:2;max-width:1320px;margin:auto;
-  padding:22px 24px;display:flex;align-items:center;justify-content:space-between;
-}
-.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px}
-.logo{
-  width:42px;height:42px;border-radius:13px;display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--primary),var(--primary-2));
-  box-shadow:0 10px 30px rgba(99,91,255,.35);font-size:20px;
-}
-.nav-link{color:#cbd5e1;font-size:14px}
-.hero-content{
-  position:relative;z-index:2;max-width:1000px;margin:0 auto;
-  padding:70px 24px 125px;text-align:center;
-}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;padding:8px 13px;
-  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);
-  border-radius:999px;color:#dbeafe;font-size:13px;backdrop-filter:blur(12px)
-}
-.dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 0 5px rgba(52,211,153,.12)}
-h1{font-size:clamp(34px,5vw,66px);line-height:1.08;margin:22px 0 16px;letter-spacing:-2px}
-.hero-content p{margin:0 auto 30px;max-width:700px;color:#b8c2d5;line-height:2;font-size:16px}
-.search-wrap{max-width:760px;margin:auto;position:relative}
-.search{
-  width:100%;height:62px;border:1px solid rgba(255,255,255,.12);
-  border-radius:18px;background:rgba(255,255,255,.09);color:#fff;
-  outline:none;padding:0 58px 0 22px;backdrop-filter:blur(16px);
-}
-.search::placeholder{color:#9ca9bf}
-.search:focus{border-color:rgba(139,92,246,.8);box-shadow:0 0 0 4px rgba(99,91,255,.14)}
-.search-icon{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:#aab6ca;font-size:21px}
-
-.main{max-width:1320px;margin:-8px auto 0;padding:0 24px 70px;position:relative;z-index:4}
-.toolbar{
-  display:flex;align-items:center;justify-content:space-between;gap:18px;
-  margin-bottom:20px;flex-wrap:wrap
-}
-.categories{display:flex;gap:9px;overflow:auto;padding:5px 0 12px;scrollbar-width:none}
-.categories::-webkit-scrollbar{display:none}
-.cat{
-  flex:0 0 auto;border:1px solid var(--line);background:var(--surface);
-  color:#475569;padding:11px 17px;border-radius:999px;transition:.2s
-}
-.cat:hover{transform:translateY(-1px);border-color:#c7d2fe}
-.cat.active{background:var(--dark);border-color:var(--dark);color:#fff}
-.meta{font-size:13px;color:var(--muted);white-space:nowrap}
-
-.grid{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;
-}
-.card{
-  background:var(--surface);border:1px solid rgba(226,232,240,.9);
-  border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 35px rgba(15,23,42,.055);
-  transition:transform .28s,box-shadow .28s,border-color .28s;
-}
-.card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#d7dafe}
-.preview{
-  height:245px;position:relative;background:#e9edf5;overflow:hidden;
-}
-.preview img{width:100%;height:100%;object-fit:cover;display:block;transition:.45s}
-.card:hover .preview img{transform:scale(1.045)}
-.overlay{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(180deg,rgba(2,6,23,.02),rgba(2,6,23,.65));
-  opacity:0;transition:.25s
-}
-.card:hover .overlay{opacity:1}
-.demo-btn{
-  background:#fff;color:#0f172a;border:0;border-radius:13px;padding:13px 22px;
-  font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.18)
-}
-.badge{
-  position:absolute;top:14px;right:14px;background:rgba(15,23,42,.78);
-  color:#fff;border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);
-  padding:7px 11px;border-radius:999px;font-size:11px
-}
-.info{padding:18px 19px 19px}
-.title-row{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
-.title{font-size:17px;font-weight:800;margin:0 0 9px}
-.desc{font-size:12px;color:var(--muted);line-height:1.9;margin:0}
-.category-label{font-size:11px;color:#635bff;background:#f0efff;padding:6px 9px;border-radius:9px;white-space:nowrap}
-.footer-row{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
-.tags{display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-size:10px;color:#64748b;background:#f8fafc;border:1px solid #eef2f7;padding:5px 8px;border-radius:7px}
-.open{color:#4f46e5;font-size:12px;font-weight:700}
-.empty{
-  display:none;text-align:center;padding:70px 20px;color:var(--muted);
-  background:#fff;border:1px dashed #d8dee9;border-radius:22px
-}
-.empty strong{display:block;color:var(--text);font-size:18px;margin-bottom:8px}
-.footer{text-align:center;color:#94a3b8;font-size:12px;padding:25px}
-
-@media(max-width:1050px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:680px){
-  .nav{padding:16px 18px}.nav-link{display:none}
-  .hero-content{padding:50px 18px 105px}
-  h1{letter-spacing:-1px}
-  .main{padding:0 16px 50px}
-  .grid{grid-template-columns:1fr;gap:18px}
-  .preview{height:220px}
-  .toolbar{align-items:flex-start}
-}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FreeThemes | گالری قالب‌های رایگان</title>
+<meta name="description" content="گالری قالب‌های رایگان FreeThemes">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<header class="hero">
-  <nav class="nav">
-    <div class="brand"><span class="logo">✦</span><span>گالری قالب‌های وب</span></div>
-    <span class="nav-link">نمایش دموهای HTML</span>
-  </nav>
-
-  <div class="hero-content">
-    <div class="eyebrow"><span class="dot"></span> مجموعه‌ای از قالب‌های آماده و حرفه‌ای</div>
-    <h1>قالب مناسب وب‌سایتت را پیدا کن</h1>
-    <p>دموها را بر اساس کاربرد وب‌سایت جستجو و دسته‌بندی کنید و قبل از انتخاب، ظاهر قالب را ببینید.</p>
-    <div class="search-wrap">
-      <span class="search-icon">⌕</span>
-      <input id="search" class="search" type="search" placeholder="نام قالب، دسته‌بندی یا کاربرد را جستجو کنید...">
-    </div>
+<header class="site-header">
+  <div class="container topbar">
+    <a class="logo" href="./">Free<span>Themes</span></a>
+    <div class="badge">قالب‌های رایگان</div>
   </div>
 </header>
 
-<main class="main">
-  <div class="categories" id="categories"></div>
-
-  <div class="toolbar">
-    <div class="meta" id="count"></div>
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">FREE HTML TEMPLATES</div>
+    <h1>قالب مناسب خودت را پیدا کن</h1>
+    <p>قالب‌ها را بر اساس حوزه فعالیت و دسته‌بندی تخصصی پیدا و مستقیماً مشاهده کنید.</p>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="جست‌وجوی قالب، دسته‌بندی یا عنوان..." autocomplete="off">
+    </div>
   </div>
+</section>
 
-  <section class="grid" id="grid"></section>
-  <div class="empty" id="empty">
-    <strong>قالبی پیدا نشد</strong>
-    عبارت جستجو یا دسته‌بندی دیگری را امتحان کنید.
+<main class="container">
+  <div class="toolbar">
+    <div id="breadcrumb" class="breadcrumb"></div>
+    <button id="back" class="back" type="button">بازگشت</button>
+  </div>
+  <div id="content">
+    <div class="state">در حال بارگذاری...</div>
   </div>
 </main>
 
-<footer class="footer">HTML Template Gallery</footer>
+<footer>
+  <div class="container">FreeThemes — گالری قالب‌های رایگان</div>
+</footer>
 
-<script>
-/*
-  برای اتصال به S3:
-  - category باید همان S3 Tag باشد.
-  - image مسیر preview.jpg همان پوشه باشد.
-  - url مسیر index.html همان پوشه باشد.
-  - title عنوان نمایشی قالب است.
-
-  در نسخه نهایی می‌توان این آرایه را با خروجی API/S3 یا demos.json جایگزین کرد.
-*/
-
-const CATEGORIES = {
-  all: "همه قالب‌ها",
-  school: "آموزش و یادگیری",
-  "real-estate": "املاک، معماری و ساخت‌وساز",
-  consulting: "خدمات تخصصی",
-  "travel-agency": "سفر، گردشگری و مهمان‌نوازی",
-  "fashion-store": "فروشگاه و تجارت الکترونیک",
-  software: "فناوری و نرم‌افزار",
-  blog: "محتوا، رسانه و سرگرمی",
-  "personal-portfolio": "نمونه‌کار و خلاقیت",
-  hospital: "پزشکی و سلامت",
-  "company-profile": "کسب‌وکار و شرکتی"
-};
-
-const demos = [
-  {
-    title:"قالب شرکتی مدرن",
-    description:"مناسب معرفی شرکت، خدمات، تیم و پروژه‌های سازمانی.",
-    category:"company-profile",
-    image:"themes/company-profile/preview.jpg",
-    url:"themes/company-profile/index.html",
-    tags:["مدرن","شرکتی","واکنش‌گرا"]
-  },
-  {
-    title:"قالب فناوری و نرم‌افزار",
-    description:"برای شرکت‌های نرم‌افزاری، محصولات دیجیتال و استارتاپ‌ها.",
-    category:"software",
-    image:"themes/software/preview.jpg",
-    url:"themes/software/index.html",
-    tags:["فناوری","SaaS","استارتاپ"]
-  },
-  {
-    title:"قالب فروشگاه مدرن",
-    description:"طراحی مناسب فروشگاه‌های آنلاین و برندهای محصول‌محور.",
-    category:"fashion-store",
-    image:"themes/fashion-store/preview.jpg",
-    url:"themes/fashion-store/index.html",
-    tags:["فروشگاهی","مدرن","RTL"]
-  },
-  {
-    title:"قالب کلینیک پزشکی",
-    description:"برای پزشکان، کلینیک‌ها، بیمارستان‌ها و مراکز سلامت.",
-    category:"hospital",
-    image:"themes/hospital/preview.jpg",
-    url:"themes/hospital/index.html",
-    tags:["پزشکی","کلینیک","رزرو"]
-  },
-  {
-    title:"قالب آموزش آنلاین",
-    description:"مناسب مدرسه، آموزشگاه، آکادمی و دوره‌های آنلاین.",
-    category:"school",
-    image:"themes/school/preview.jpg",
-    url:"themes/school/index.html",
-    tags:["آموزش","دوره","LMS"]
-  },
-  {
-    title:"قالب نمونه‌کار خلاق",
-    description:"برای طراحان، برنامه‌نویسان، عکاسان و متخصصان خلاق.",
-    category:"personal-portfolio",
-    image:"themes/personal-portfolio/preview.jpg",
-    url:"themes/personal-portfolio/index.html",
-    tags:["Portfolio","خلاق","شخصی"]
-  }
-];
-
-let activeCategory = "all";
-
-function renderCategories(){
-  const el = document.getElementById("categories");
-  el.innerHTML = Object.entries(CATEGORIES).map(([key,label]) =>
-    `<button class="cat ${key===activeCategory?"active":""}" data-category="${key}">${label}</button>`
-  ).join("");
-
-  el.querySelectorAll(".cat").forEach(btn=>{
-    btn.addEventListener("click",()=>{
-      activeCategory = btn.dataset.category;
-      renderCategories();
-      render();
-    });
-  });
-}
-
-function render(){
-  const query = document.getElementById("search").value.trim().toLowerCase();
-
-  const filtered = demos.filter(item=>{
-    const categoryOK = activeCategory==="all" || item.category===activeCategory;
-    const text = [item.title,item.description,item.category,CATEGORIES[item.category],...(item.tags||[])].join(" ").toLowerCase();
-    return categoryOK && (!query || text.includes(query));
-  });
-
-  document.getElementById("count").textContent = `${filtered.length} قالب نمایش داده می‌شود`;
-  document.getElementById("empty").style.display = filtered.length ? "none" : "block";
-
-  document.getElementById("grid").innerHTML = filtered.map(item=>`
-    <article class="card">
-      <div class="preview">
-        <img src="${item.image}" alt="${item.title}" loading="lazy"
-             onerror="this.style.display='none'">
-        <span class="badge">${CATEGORIES[item.category] || item.category}</span>
-        <div class="overlay">
-          <a class="demo-btn" href="${item.url}" target="_blank" rel="noopener">مشاهده دمو ↗</a>
-        </div>
-      </div>
-      <div class="info">
-        <div class="title-row">
-          <div>
-            <h2 class="title">${item.title}</h2>
-            <p class="desc">${item.description}</p>
-          </div>
-          <span class="category-label">${CATEGORIES[item.category] || item.category}</span>
-        </div>
-        <div class="footer-row">
-          <div class="tags">
-            ${(item.tags||[]).map(t=>`<span class="tag">${t}</span>`).join("")}
-          </div>
-          <a class="open" href="${item.url}" target="_blank" rel="noopener">باز کردن دمو</a>
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
-
-document.getElementById("search").addEventListener("input", render);
-renderCategories();
-render();
-</script>
-
+<script src="app.js"></script>
 </body>
 </html>
