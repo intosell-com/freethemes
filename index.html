@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script id="script">
+            const S3_BUCKET_BASE_URL = 'https://f-themes.s3.ir-thr-at1.arvanstorage.ir';
+            const BANNER_COLOR_NAME = 'white'; // white, orange, green, yellow, blue, blue-green, black, grey
+            const BANNER_TEXT = 'ff';
+            const SORT_BY = 'name'; // name, size, date
+            const SORT_TYPE = 'asc'; // asc, desc
+            const LIMIT_FETCH_LIST = 100 // each fetch list is 1000 objects
+            const LIMIT_LOAD_FILES_COUNT = 100 // check access of files count and load
+            const WAIT_DELAY_LOAD_FILES_MS = 1000
+            const CACHE_EXPIRY_MS = 0; // 0 ms cache expiry - no cache
+
+        </script>
+        <style>
+            * {
+                font-family: -apple-system, 'tahoma', 'sans-serif';
+                margin: 0;
+            }
+
+            tr:hover {
+                background-color: #e3e3e3;
+            }
+
+            tr:first-of-type:hover {
+                background-color: #fff;
+            }
+
+            td {
+                padding: 4px 16px;
+            }
+
+            td b {
+                cursor: pointer;
+            }
+
+            td b::selection {
+                background-color: transparent;
+            }
+
+            .banner {
+                padding: 8px;
+                margin: 0 auto 8px;
+                width: 400px;
+                max-width: calc(100%!p(MISSING)x);
+                border-radius: 12px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                text-align: center;
+                background-color: #00baba;
+                color: #fff;
+                font-weight: 600;
+            }
+
+            .banner-color-white {
+                background-color: #fff;
+                color: #000;
+            }
+
+            .banner-color-orange {
+                background-color: #ff8e00;
+                color: #000;
+            }
+
+            .banner-color-green {
+                background-color: #7dc409;
+                color: #000;
+            }
+
+            .banner-color-yellow {
+                background-color: yellow;
+                color: #000;
+            }
+
+            .banner-color-blue {
+                background-color: blue;
+                color: #fff;
+            }
+
+            .banner-color-black {
+                background-color: #000;
+                color: #fff;
+            }
+
+            .banner-color-grey {
+                background-color: #ADADB4;
+                color: #000;
+            }
+
+            .search {
+                padding: 8px;
+                margin: 8px;
+                border-radius: 8px;
+                border: 1px solid #cacaca;
+                outline: none;
+                width: 420px;
+                max-width: calc(100%!p(MISSING)x);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="banner" id="banner"></div>
+        <input class="search" type="search" placeholder="search" onkeyup="search(event)">
+        <div id="content"></div>
+        <script>
+            let directories = [];
+            let totalItems = [];
+            let totalItemsCopied = [];
+            let sortType = SORT_TYPE;
+            let sortBy = SORT_BY;
+            let table;
+
+            const initTable = () => {
+                table = document.createElement('table');
+                const th = document.createElement('tr');
+                let htd = document.createElement('td');
+                htd.innerHTML = '<b onclick="toggleTypeAndSortObject(\'date\')">last modified</b>';
+                th.append(htd);
+                htd = document.createElement('td');
+                htd.innerHTML = '<b onclick="toggleTypeAndSortObject(\'size\')">size</b>';
+                th.append(htd);
+                htd = document.createElement('td');
+                htd.innerHTML = '<b>type</b>';
+                th.append(htd);
+                htd = document.createElement('td');
+                htd.innerHTML = '<b onclick="toggleTypeAndSortObject(\'name\')">name</b>';
+                th.append(htd);
+                table.append(th);
+                document.getElementById('content').innerHTML = (table.outerHTML);
+            }
+
+            (async () => {
+                initTable();
+                const banner = document.getElementById('banner');
+                if (!BANNER_TEXT) {
+                    banner.style.display = 'none';
+                }
+                banner.innerText = BANNER_TEXT;
+                banner.className = `${banner.className} banner-color-${BANNER_COLOR_NAME}`;
+
+                let url = S3_BUCKET_BASE_URL;
+                url = url.replace(/\/$/, '');
+
+                // Try to load from localStorage first
+                let contents = []
+                const cachedData = getCachedData();
+                if (cachedData && cachedData.length > 0) {
+                    console.log('use cache')
+                    contents = cachedData;
+                } else {
+                    console.log('do fetch')
+                    contents = await fetchWithPagination(url, getPath());
+                    cacheData(contents);
+                }
+
+                if (goBack() !== false) {
+                    directories.push('../');
+                    // addToTable(table, '../', `?path=${goBack()}`, '', '', '');
+                }
+                console.log('contents', contents.length)
+
+                // Create directories
+                showDirectories(contents)
+
+                await showFiles(url, contents)
+            })();
+
+            // Caching the fetched data with a timestamp
+            function cacheData(data) {
+                if (CACHE_EXPIRY_MS == 0) return []
+                const timestamp = new Date().getTime();
+                const cachedObject = {
+                    timestamp,
+                    data
+                };
+                localStorage.setItem('s3ContentsCache', JSON.stringify(cachedObject));
+            }
+
+            // Retrieving data from localStorage and checking if cache is still valid
+            function getCachedData() {
+                const cache = localStorage.getItem('s3ContentsCache');
+                if (cache) {
+                    const cachedObject = JSON.parse(cache);
+                    const currentTime = new Date().getTime();
+
+                    // Check if the cache has expired
+                    if (currentTime - cachedObject.timestamp < CACHE_EXPIRY_MS) {
+                        return cachedObject.data;
+                    } else {
+                        localStorage.removeItem('s3ContentsCache');  // Remove stale cache
+                    }
+                }
+                return null;
+            }
+
+            function xmlToJson(xml) {
+                // Create an empty object
+                let obj = {};
+
+                // Check if the node has child nodes
+                if (xml.hasChildNodes()) {
+                    // Loop through each child node
+                    xml.childNodes.forEach((child) => {
+                        // Check if the child node is an element node
+                        if (child.nodeType === 1) {
+                            // Get the child node's name and value
+                            const nodeName = child.nodeName;
+                            const nodeValue = child.textContent;
+
+                            // Recursively convert child nodes to JSON
+                            obj[nodeName] = xmlToJson(child);
+                            obj[nodeName].value = nodeValue; // Store value separately
+                        }
+                    });
+                }
+                return obj;
+            }
+
+            async function fetchWithPagination(url, prefix = '') {
+                let nextContinuationToken = null;
+                let isTruncated = true;
+                let allContents = []; // Array to accumulate the contents
+                let count = 0
+
+                while (isTruncated) {
+
+                    if (count > LIMIT_FETCH_LIST) {
+                        break;
+                    }
+
+                    // Prepare the URL with the NextContinuationToken if available
+                    let paginatedUrl = url + '?list-type=2';
+                    if (nextContinuationToken) {
+                        paginatedUrl += `&continuation-token=${nextContinuationToken}`;
+                    }
+                    if (prefix != '') {
+                        paginatedUrl += `&prefix=${prefix}`
+                    }
+
+                    try {
+                        // Fetch the XML response from the server
+                        const response = await fetch(paginatedUrl);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+
+                        // Parse the response as text (XML)
+                        const responseText = await response.text();
+
+                        // Use DOMParser to parse the XML
+                        const parser = new DOMParser();
+                        const xmlDoc = parser.parseFromString(responseText, "application/xml");
+
+                        // Extract NextContinuationToken and isTruncated from the XML
+                        const nextTokenElement = xmlDoc.getElementsByTagName('NextContinuationToken')[0];
+                        const isTruncatedElement = xmlDoc.getElementsByTagName('IsTruncated')[0];
+
+                        nextContinuationToken = nextTokenElement ? nextTokenElement.textContent : null;
+                        isTruncated = isTruncatedElement && isTruncatedElement.textContent === 'true';
+
+                        // Extract Contents from the XML and append to allContents array
+                        const contentElements = xmlDoc.getElementsByTagName('Contents');
+                        for (let content of contentElements) {
+                            content = xmlToJson(content)
+                            allContents.push(content);  // Append each <Contents> element to the array
+                        }
+
+                        count += 1;
+
+                    } catch (error) {
+                        console.error("Error during fetch:", error);
+                        break; // Exit the loop if there's an error
+                    }
+                }
+                return allContents; // Return the accumulated contents after all pages are fetched
+            }
+
+            function showDirectories(contents) {
+                // use classic loop for best performance
+                for (let i = 0; i < contents.length; i++) {
+                    let name = contents[i].Key.value;
+
+                    let reg = '';
+                    if (getPath() != '/') {
+                        reg = new RegExp('^' + getPath());
+                        if (!reg.test(name)) {
+                            continue;
+                        }
+                    }
+
+                    name = name.replace(reg, '');
+                    if (/\//.test(name)) {
+                        const dirName = (name.split('/'))[0];
+                        if (!directories.includes(dirName)) {
+                            directories.push(dirName);
+                        }
+                        continue;
+                    }
+
+                }
+                directories.map((dir) => {
+                    if (dir == '../') {
+                        addToTable(table, '../', `?path=${goBack()}`, '', '', '');
+                    } else {
+                        addToTable(table, dir, `?path=${getPath()}${dir}`, '-', '-', 'dir');
+                    }
+                })
+            }
+
+            async function showFiles(url, contents) {
+                let objects = [];
+                let obj_count = 0
+                for (let item of contents) {
+                    if (obj_count > LIMIT_LOAD_FILES_COUNT) {
+                        await Promise.all(objects)
+                            .then((data) => {
+                                const itemsToSort = []; // Array to store items that will be passed to sortObject
+                                data.forEach(({ hasAccess, item }) => {
+                                    if (hasAccess) {
+                                        totalItems.push(item);
+                                        itemsToSort.push(item);
+                                    }
+                                })
+                                sortObject('name', 'asc', itemsToSort); // Example: sorting by name in ascending order
+                            })
+                        console.log('wait for check access');
+                        const sleepNow = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+                        await sleepNow(WAIT_DELAY_LOAD_FILES_MS)
+                        objects = [];
+                        obj_count = 0;
+                    }
+                    const link = item.Key.value;
+                    let lastModified = (new Date(item.LastModified.value)).toLocaleString('en-GB');
+                    const size = `${parseFloat(parseInt(item.Size.value) / 1024).toFixed(2)} KB`;
+                    let name = item.Key.value;
+
+                    if (/(index\.html)/.test(name)) {
+                        continue;
+                    }
+
+                    let reg = '';
+                    if (getPath() != '/') {
+                        reg = new RegExp('^' + getPath());
+                        if (!reg.test(name)) {
+                            continue;
+                        }
+                    }
+
+                    name = name.replace(reg, '');
+                    if (/\//.test(name)) {
+                        const dirName = (name.split('/'))[0];
+                        if (!directories.includes(dirName)) {
+                            directories.push(dirName);
+                        }
+                        continue;
+                    }
+
+                    obj_count += 1
+                    objects.push(checkAccess(`${url}/${link}`, {
+                        name: name,
+                        link: `${url}/${link}`,
+                        size: size,
+                        lastModified: lastModified,
+                        type: 'file',
+                    }));
+                }
+                if (objects.length > 0) {
+                    await Promise.all(objects)
+                        .then((data) => {
+                            const itemsToSort = []; // Array to store items that will be passed to sortObject
+                            data.forEach(({ hasAccess, item }) => {
+                                if (hasAccess) {
+                                    totalItems.push(item);
+                                    itemsToSort.push(item)
+                                }
+                            })
+                            sortObject('name', 'asc', itemsToSort); // Example: sorting by name in ascending order
+                        })
+                }
+            }
+
+            const search = (e) => {
+                if (e.keyCode == 13) {
+                    const val = e.target.value;
+                    if (val) {
+                        totalItemsCopied = [];
+                        totalItems.map((item) => {
+                            const reg = new RegExp(val);
+                            if (reg.test(item.name)) {
+                                totalItemsCopied.push(item)
+                            }
+                        })
+                        sortObject(sortBy, sortType, totalItemsCopied);
+                    } else {
+                        totalItemsCopied = totalItems;
+                        sortObject(sortBy, sortType, totalItemsCopied);
+                    }
+                }
+            }
+
+            const toggleTypeAndSortObject = (data, sortBy) => {
+                sortType = sortType == 'asc' ? 'desc' : 'asc'
+                if (!totalItemsCopied.length) {
+                    totalItemsCopied = totalItems;
+                }
+                sortObject(sortBy, sortType, totalItemsCopied);
+            }
+            const sortObject = (_sortBy = sortBy, _sortType = sortType, data = totalItems) => {
+                sortBy = _sortBy;
+                sortType = _sortType;
+
+                data.sort(function (a, b) {
+                    if (_sortBy === 'date') {
+                        return new Date(a.lastModified) - new Date(b.lastModified)
+                    }
+                    if (_sortBy === 'name') {
+                        return a.name < b.name ? -1 : 1;
+                    }
+                    return parseFloat(a[_sortBy]) - parseFloat(b[_sortBy]);
+                })
+
+                if (_sortType === 'desc') {
+                    data = data.reverse();
+                }
+
+                data.forEach((item) => {
+                    addToTable(table, item.name, item.link, item.size, item.lastModified, item.type);
+                })
+            }
+
+            function getPath() {
+                const location = decodeURIComponent(window.location.href);
+                if (!/\?/.test(location)) {
+                    return '';
+                }
+
+                let path = ((location.split('?'))[1].split('path='))[1];
+                path = path.replace(/^\//, '').replace(/\/$/, '');
+                return path ? path + '/' : path;
+            }
+
+            function checkAccess(url, item) {
+                return new Promise(async (res) => {
+                    const controller = new AbortController();
+                    const signal = controller.signal
+                    const data = await fetch(url, {
+                        signal: signal,
+                        method: 'HEAD',
+                    })
+                    controller.abort();
+                    res({
+                        hasAccess: data.status >= 200 && data.status < 300,
+                        item: item,
+                    });
+
+                    return data.status >= 200 && data.status < 300;
+                })
+            }
+            const addToTable = (table, name, link, size, lastModified, type) => {
+                table = document.querySelector('#content table'); // Select the existing table
+
+                const tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = lastModified;
+                tr.append(td);
+                td = document.createElement('td');
+                td.innerHTML = size;
+                tr.append(td);
+                td = document.createElement('td');
+                td.innerHTML = type;
+                tr.append(td);
+                td = document.createElement('td');
+                td.innerHTML = `<a href='${link}'>${name}</a>`;
+                tr.append(td);
+                table.append(tr);
+            }
+            function goBack() {
+                if (!getPath()) {
+                    return false;
+                }
+
+                const path = getPath().split('/');
+                const lastPage = new RegExp(path[path.length - 2] + '\/$');
+                return getPath().replace(lastPage, '');
+            }
+        </script>
+    </body>
+
+</html>
