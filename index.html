@@ -3,58 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>قالب وب سایت آماده | آرشیو قالب‌های حرفه‌ای FreeThemes</title>
-<meta name="description" content="آرشیو قالب‌های وب سایت آماده با پیش‌نمایش زنده، دسته‌بندی هوشمند، جستجو و صفحه‌بندی.">
+<title>قالب وب سایت آماده | آرشیو قالب‌های حرفه‌ای با پیش‌نمایش زنده | FreeThemes</title>
+<meta name="description" content="آرشیو قالب وب سایت آماده FreeThemes؛ مشاهده قالب‌های فروشگاهی، شرکتی، پزشکی، لندینگ، خبری، شخصی و ده‌ها کاربرد دیگر با پیش‌نمایش زنده و صفحه‌بندی.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://freethemes.ir/">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="قالب وب سایت آماده | FreeThemes">
+<meta property="og:description" content="آرشیو قالب‌های وب سایت با دسته‌بندی، پیش‌نمایش زنده و صفحه‌بندی.">
+<meta property="og:url" content="https://freethemes.ir/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
 <style>
-@font-face{font-family:Vazir;src:url('https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/Vazir.woff2')}
-body{font-family:Vazir,Tahoma;background:#f7f8fc;margin:0;color:#111}
-.wrap{max-width:1200px;margin:auto;padding:25px}
-.hero{text-align:center;background:white;padding:40px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:white;border-radius:20px;overflow:hidden;border:1px solid #ddd}
-iframe{width:100%;height:260px;border:0}
-button{padding:10px 15px;border-radius:10px;border:1px solid #ddd;background:white;cursor:pointer}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
+@font-face{font-family:Vazir;src:url(https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/Vazir.woff2) format("woff2");font-display:swap}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f6f7fb;color:#182230;font-family:Vazir,Tahoma,Arial,sans-serif}
+a{color:inherit}.container{width:min(1180px,calc(100% - 32px));margin:auto}
+header{background:#101828;color:#fff;padding:14px 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-size:22px;font-weight:900}.nav a{text-decoration:none;margin-right:18px;font-size:14px}
+.hero{background:#fff;padding:48px 0 35px;text-align:center;border-bottom:1px solid #e7eaf0}.hero h1{font-size:38px;margin:0 0 12px}.hero p{color:#667085;font-size:17px;margin:0}
+.section{padding:34px 0}.section h2{font-size:24px;margin:0 0 20px}.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.cat{background:#fff;border:1px solid #e4e7ec;border-radius:15px;padding:17px;text-decoration:none;transition:.2s}.cat:hover,.cat.active{border-color:#111827;transform:translateY(-2px)}.cat strong{display:block;font-size:16px}.cat small{display:block;color:#98a2b3;margin-top:5px}
+.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:20px;flex-wrap:wrap}.search{flex:1;min-width:240px;padding:14px;border:1px solid #d0d5dd;border-radius:12px;font:inherit;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid #e4e7ec;border-radius:18px;overflow:hidden}.preview{height:240px;background:#eef1f5}.preview iframe{width:100%;height:100%;border:0}.card-body{padding:16px}.tag{display:inline-block;background:#f2f4f7;border-radius:8px;padding:5px 9px;font-size:12px;margin-top:8px}.view{display:inline-block;margin-top:12px;background:#111827;color:#fff;padding:9px 13px;border-radius:9px;text-decoration:none;font-size:13px}
+.pagination{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:28px}.pagination button{border:1px solid #d0d5dd;background:#fff;border-radius:9px;padding:9px 13px;cursor:pointer;font:inherit}.pagination button.active{background:#111827;color:#fff}
+.status{text-align:center;color:#667085;padding:30px}.empty{grid-column:1/-1;text-align:center;padding:50px;background:#fff;border-radius:16px}
+footer{background:#101828;color:#d0d5dd;padding:35px 0;margin-top:30px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}.footer-grid a{display:block;text-decoration:none;margin:8px 0;color:#d0d5dd}
+@media(max-width:900px){.cats{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.nav a{display:none}.hero h1{font-size:28px}.cats,.grid{grid-template-columns:1fr}.container{width:min(100% - 22px,1180px)}}
 </style>
 </head>
 <body>
-<div class="hero">
-<h1>قالب وب سایت آماده با پیش‌نمایش زنده</h1>
-<p>انتخاب قالب مناسب برای طراحی سایت حرفه‌ای</p>
-<input id="search" placeholder="جستجوی قالب" style="width:80%;padding:14px">
+<header><div class="container nav"><div class="logo">FreeThemes</div><nav><a href="#categories">دسته‌بندی‌ها</a><a href="#templates">قالب‌ها</a><a href="https://freethemes.ir/" target="_self">صفحه اصلی</a></nav></div></header>
+
+<main>
+<section class="hero">
+<div class="container">
+<h1>آرشیو قالب‌های وب سایت آماده</h1>
+<p>قالب مناسب پروژه خود را از میان مجموعه‌ای از وب‌سایت‌های آماده پیدا کنید و پیش‌نمایش زنده آن را ببینید.</p>
 </div>
-<div class="wrap">
-<h2>دسته‌بندی‌ها</h2>
-<div id="cats"></div>
-<h2>آخرین قالب‌ها</h2>
-<div id="list" class="grid"></div>
-<div id="pages"></div>
+</section>
+
+<section id="categories" class="section">
+<div class="container">
+<h2>دسته‌بندی‌های اصلی قالب وب‌سایت</h2>
+<p>برای ورود به مجموعه قالب‌های هر کاربرد، یک دسته را انتخاب کنید.</p>
+<div id="cats" class="cats"></div>
 </div>
+</section>
+
+<section id="templates" class="section">
+<div class="container">
+<h2>قالب‌های وب‌سایت</h2>
+<div class="toolbar">
+<input id="search" class="search" type="search" placeholder="جستجوی نام قالب..." aria-label="جستجوی قالب">
+<button id="allBtn" class="cat" type="button">همه قالب‌ها</button>
+</div>
+<div id="status" class="status">در حال دریافت قالب‌ها...</div>
+<div id="grid" class="grid"></div>
+<div id="pagination" class="pagination"></div>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer-grid"><div><h3>FreeThemes</h3><p>آرشیو قالب‌های وب‌سایت با پیش‌نمایش زنده و دسته‌بندی کاربردی.</p></div><div><strong>دسته‌ها</strong><a href="?category=shop">فروشگاهی</a><a href="?category=business">شرکتی</a><a href="?category=medical">پزشکی</a></div><div><strong>خدمات</strong><a href="#templates">قالب‌های وب‌سایت</a><a href="https://www.topweb.ir/" target="_blank" rel="noopener">طراحی وب‌سایت</a></div></div></footer>
+
 <script>
-const base="https://themes.freethemes.ir/";
-let data=[],cat="",page=1,size=12;
-const names={shop:"فروشگاهی",business:"شرکتی",admin:"مدیریت",landing:"لندینگ",medical:"پزشکی",404:"404"};
-function category(f){
- let n=f.split('/').pop();
- if(!n.startsWith("index-")) return null;
- return n.replace("index-","").split("-")[0];
+const BASE="https://themes.freethemes.ir/";
+const PAGE_SIZE=12;
+let categories=[],templates=[],activeCategory=new URLSearchParams(location.search).get("category")||"";
+let currentPage=1;
+
+const $=s=>document.querySelector(s);
+function categoryFromFilename(file){
+ const name=file.split("/").pop().toLowerCase();
+ if(!name.startsWith("index-")||!name.endsWith(".html")) return null;
+ const slug=name.slice(6,-5).split("-")[0];
+ return categories.some(c=>c.slug===slug)?slug:null;
 }
-function draw(){
- let q=document.querySelector("#search").value.toLowerCase();
- let list=data.filter(x=(!cat||x.cat==cat)&&x.file.toLowerCase().includes(q));
- document.querySelector("#list").innerHTML=list.map(x=>`
- <div class="card">
- <iframe loading="lazy" src="${base+x.file}"></iframe>
- <div style="padding:15px"><b>${x.file}</b><br>${names[x.cat]||x.cat}</div>
- </div>`).join("");
+function renderCategories(){
+ $("#cats").innerHTML=categories.map(c=>`<a class="cat ${activeCategory===c.slug?"active":""}" href="?category=${encodeURIComponent(c.slug)}" title="${c.title}"><strong>${c.name}</strong><small>${c.title}</small></a>`).join("");
 }
-fetch("templates.json").then(r=>r.json()).then(x=>{
- data=x.map(a=>({file:a.file,cat:category(a.file)})).filter(a=>a.cat);
- cats.innerHTML=[...new Set(data.map(x=>x.cat))].map(c=>`<button onclick="cat='${c}';draw()">${names[c]||c}</button>`).join("");
- draw();
-});
-search.oninput=draw;
+function render(){
+ const q=$("#search").value.trim().toLowerCase();
+ const list=templates.filter(t=>(!activeCategory||t.category===activeCategory)&&(!q||t.file.toLowerCase().includes(q)));
+ const total=Math.max(1,Math.ceil(list.length/PAGE_SIZE));
+ if(currentPage>total) currentPage=total;
+ const start=(currentPage-1)*PAGE_SIZE;
+ $("#grid").innerHTML=list.slice(start,start+PAGE_SIZE).map(t=>`
+ <article class="card">
+  <div class="preview"><iframe loading="lazy" title="${t.title}" src="${BASE+t.file}"></iframe></div>
+  <div class="card-body"><strong>${t.title}</strong><div class="tag">${t.categoryName}</div><br><a class="view" href="${BASE+t.file}" target="_blank" rel="noopener">مشاهده پیش‌نمایش</a></div>
+ </article>`).join("")||'<div class="empty">قالبی در این دسته یا جستجو پیدا نشد.</div>';
+ $("#pagination").innerHTML=Array.from({length:total},(_,i)=>`<button class="${i+1===currentPage?"active":""}" onclick="goPage(${i+1})">${i+1}</button>`).join("");
+ $("#status").textContent=`${list.length.toLocaleString("fa-IR")} قالب`;
+}
+function goPage(n){currentPage=n;render();$("#templates").scrollIntoView({behavior:"smooth"});}
+async function load(){
+ try{
+  const [cr,tr]=await Promise.all([fetch("categories.json",{cache:"no-store"}),fetch("templates.json",{cache:"no-store"})]);
+  if(!cr.ok||!tr.ok) throw Error("manifest");
+  categories=await cr.json();
+  const raw=await tr.json();
+  templates=raw.map(x=>typeof x==="string"?{file:x}:x).map(x=>({...x,category:categoryFromFilename(x.file||"")})).filter(x=>x.category);
+  templates.forEach(x=>x.categoryName=categories.find(c=>c.slug===x.category)?.name||x.category);
+  renderCategories();render();
+ }catch(e){
+  $("#status").textContent="فهرست قالب‌ها در دسترس نیست. فایل templates.json را با فهرست قالب‌ها قرار دهید.";
+  $("#grid").innerHTML='<div class="empty">برای نمایش قالب‌ها، templates.json باید در کنار index.html قرار داشته باشد.</div>';
+ }
+}
+$("#search").addEventListener("input",()=>{currentPage=1;render()});
+$("#allBtn").addEventListener("click",()=>{activeCategory="";currentPage=1;history.replaceState({}, "", location.pathname);renderCategories();render()});
+load();
 </script>
-</body>
-</html>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"آرشیو قالب‌های وب سایت آماده","url":"https://freethemes.ir/","inLanguage":"fa-IR","description":"آرشیو قالب‌های وب سایت آماده با دسته‌بندی و پیش‌نمایش زنده."}
+</script>
+</body></html>

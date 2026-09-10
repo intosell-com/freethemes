@@ -1,8 +1,152 @@
-{
-  "shop": "فروشگاهی",
-  "business": "شرکتی",
-  "admin": "مدیریت",
-  "landing": "لندینگ",
-  "medical": "پزشکی",
-  "404": "404"
-}
+[
+  {
+    "slug": "shop",
+    "name": "فروشگاهی",
+    "title": "قالب‌های فروشگاهی",
+    "url": "https://freethemes.ir/?category=shop"
+  },
+  {
+    "slug": "business",
+    "name": "شرکتی",
+    "title": "قالب‌های شرکتی",
+    "url": "https://freethemes.ir/?category=business"
+  },
+  {
+    "slug": "admin",
+    "name": "مدیریت",
+    "title": "قالب‌های مدیریت",
+    "url": "https://freethemes.ir/?category=admin"
+  },
+  {
+    "slug": "onepage",
+    "name": "تک صفحه‌ای",
+    "title": "قالب‌های تک صفحه‌ای",
+    "url": "https://freethemes.ir/?category=onepage"
+  },
+  {
+    "slug": "personal",
+    "name": "شخصی",
+    "title": "قالب‌های شخصی",
+    "url": "https://freethemes.ir/?category=personal"
+  },
+  {
+    "slug": "elearning",
+    "name": "آموزشی",
+    "title": "قالب‌های آموزشی",
+    "url": "https://freethemes.ir/?category=elearning"
+  },
+  {
+    "slug": "landing",
+    "name": "لندینگ",
+    "title": "قالب‌های لندینگ",
+    "url": "https://freethemes.ir/?category=landing"
+  },
+  {
+    "slug": "coming-soon",
+    "name": "در دست ساخت",
+    "title": "قالب‌های در دست ساخت",
+    "url": "https://freethemes.ir/?category=coming-soon"
+  },
+  {
+    "slug": "multipage",
+    "name": "چند منظوره",
+    "title": "قالب‌های چند منظوره",
+    "url": "https://freethemes.ir/?category=multipage"
+  },
+  {
+    "slug": "news",
+    "name": "خبری",
+    "title": "قالب‌های خبری",
+    "url": "https://freethemes.ir/?category=news"
+  },
+  {
+    "slug": "portfolio",
+    "name": "گالری",
+    "title": "قالب‌های گالری",
+    "url": "https://freethemes.ir/?category=portfolio"
+  },
+  {
+    "slug": "creative",
+    "name": "خلاقانه",
+    "title": "قالب‌های خلاقانه",
+    "url": "https://freethemes.ir/?category=creative"
+  },
+  {
+    "slug": "entertainment",
+    "name": "سرگرمی",
+    "title": "قالب‌های سرگرمی",
+    "url": "https://freethemes.ir/?category=entertainment"
+  },
+  {
+    "slug": "mobile",
+    "name": "موبایل",
+    "title": "قالب‌های موبایل",
+    "url": "https://freethemes.ir/?category=mobile"
+  },
+  {
+    "slug": "hosting",
+    "name": "هاستینگ",
+    "title": "قالب‌های هاستینگ",
+    "url": "https://freethemes.ir/?category=hosting"
+  },
+  {
+    "slug": "login",
+    "name": "صفحه ورود",
+    "title": "قالب‌های صفحه ورود",
+    "url": "https://freethemes.ir/?category=login"
+  },
+  {
+    "slug": "404",
+    "name": "۴۰۴",
+    "title": "قالب‌های ۴۰۴",
+    "url": "https://freethemes.ir/?category=404"
+  },
+  {
+    "slug": "domain-sale",
+    "name": "فروش دامنه",
+    "title": "قالب‌های فروش دامنه",
+    "url": "https://freethemes.ir/?category=domain-sale"
+  },
+  {
+    "slug": "real-estate",
+    "name": "املاک",
+    "title": "قالب‌های املاک",
+    "url": "https://freethemes.ir/?category=real-estate"
+  },
+  {
+    "slug": "hotel",
+    "name": "هتل",
+    "title": "قالب‌های هتل",
+    "url": "https://freethemes.ir/?category=hotel"
+  },
+  {
+    "slug": "guild",
+    "name": "اصناف",
+    "title": "قالب‌های اصناف",
+    "url": "https://freethemes.ir/?category=guild"
+  },
+  {
+    "slug": "music-movie",
+    "name": "موزیک و فیلم",
+    "title": "قالب‌های موزیک و فیلم",
+    "url": "https://freethemes.ir/?category=music-movie"
+  },
+  {
+    "slug": "listing",
+    "name": "آگهی",
+    "title": "قالب‌های آگهی",
+    "url": "https://freethemes.ir/?category=listing"
+  },
+  {
+    "slug": "medical",
+    "name": "پزشکی",
+    "title": "قالب‌های پزشکی",
+    "url": "https://freethemes.ir/?category=medical"
+  },
+  {
+    "slug": "special-pages",
+    "name": "صفحات خاص",
+    "title": "قالب‌های صفحات خاص",
+    "url": "https://freethemes.ir/?category=special-pages"
+  }
+]
