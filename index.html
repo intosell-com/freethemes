@@ -143,23 +143,45 @@ let data=[],filtered=[],page=1,currentCategory='';
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const demo=k=>BASE+'/'+k.split('/').map(encodeURIComponent).join('/');
 function renderCats(){document.getElementById('cats').innerHTML=CATS.map(c=>`<a class="cat" href="?category=${encodeURIComponent(c[0])}" title="قالب‌های ${esc(c[1])}" data-cat="${c[0]}"><div class="ico"><svg viewBox="0 0 24 24">${I[c[2]]||I.star}</svg></div><h3>${esc(c[1])}</h3><small>${esc(c[0])}</small><span class="num" data-count="${c[0]}">— قالب</span></a>`).join('')}
-async function listAll(){
+const LIST_ENDPOINTS=[
+  BASE+'/?list-type=2&max-keys=1000',
+  'https://f-themes.s3.ir-thr-at1.arvanstorage.ir/?list-type=2&max-keys=1000'
+];
+
+async function listFromEndpoint(baseUrl){
  let out=[],token='',guard=0;
  while(guard++<100){
-  const u=BASE+'/?list-type=2&max-keys=1000'+(token?'&continuation-token='+encodeURIComponent(token):'');
+  const u=baseUrl+(token?'&continuation-token='+encodeURIComponent(token):'');
   const r=await fetch(u,{mode:'cors',cache:'no-store'});
   if(!r.ok)throw new Error('HTTP '+r.status);
-  const x=new DOMParser().parseFromString(await r.text(),'application/xml');
-  x.querySelectorAll('Contents').forEach(c=>out.push({key:c.querySelector('Key')?.textContent||'',lm:c.querySelector('LastModified')?.textContent||''}));
+  const text=await r.text();
+  const x=new DOMParser().parseFromString(text,'application/xml');
+  if(x.querySelector('parsererror')) throw new Error('Invalid XML');
+  x.querySelectorAll('Contents').forEach(c=>out.push({
+    key:c.querySelector('Key')?.textContent||'',
+    lm:c.querySelector('LastModified')?.textContent||''
+  }));
   if(x.querySelector('IsTruncated')?.textContent!=='true')break;
-  token=x.querySelector('NextContinuationToken')?.textContent||'';if(!token)break;
+  token=x.querySelector('NextContinuationToken')?.textContent||'';
+  if(!token)break;
  }
  return out;
+}
+
+async function listAll(){
+ let lastError=null;
+ for(const endpoint of LIST_ENDPOINTS){
+  try{
+   const result=await listFromEndpoint(endpoint);
+   if(result.length || endpoint.includes('arvanstorage')) return result;
+  }catch(e){ lastError=e; console.warn('List endpoint failed:',endpoint,e); }
+ }
+ throw lastError || new Error('No list endpoint available');
 }
 function build(a){return a.filter(o=>/(^|\/)index\.html$/i.test(o.key)).map(o=>{const p=o.key.split('/').filter(Boolean);return {...o,cat:p[0]||'',name:p.length===3?p[1]:(p.length===1?'index':''),depth:p.length}}).filter(o=>CATS.some(c=>c[0]===o.cat)&&(o.depth===3||o.depth===1))}
 function fmt(d){return d?new Date(d).toLocaleDateString('fa-IR'):'—'}
 function render(){
- const q=document.getElementById('q').value.trim().toLowerCase();
+ const qEl=document.getElementById('q'); const q=qEl?qEl.value.trim().toLowerCase():'';
  filtered=data.filter(t=>(!currentCategory||t.cat===currentCategory)&&(!q||t.key.toLowerCase().includes(q)||t.name.toLowerCase().includes(q))).sort((a,b)=>new Date(b.lm)-new Date(a.lm));
  const total=Math.max(1,Math.ceil(filtered.length/PER_PAGE));if(page>total)page=total;
  const items=filtered.slice((page-1)*PER_PAGE,page*PER_PAGE),info=CATS.find(c=>c[0]===currentCategory);
@@ -175,11 +197,11 @@ function render(){
 }
 function goPage(n){page=n;render();document.getElementById('archive').scrollIntoView({behavior:'smooth'})}
 function readCat(){const p=new URLSearchParams(location.search);currentCategory=p.get('category')||'';if(!CATS.some(c=>c[0]===currentCategory))currentCategory=''}
-document.getElementById('q').addEventListener('input',()=>{page=1;render()});
+const qEl=document.getElementById('q'); if(qEl) qEl.addEventListener('input',()=>{page=1;render()});
 document.getElementById('clear').addEventListener('click',()=>{history.pushState({},'',location.pathname);currentCategory='';page=1;render()});
 window.addEventListener('popstate',()=>{readCat();page=1;render()});
 renderCats();readCat();
-(async()=>{try{data=build(await listAll());document.getElementById('st').textContent='آماده';const counts={};data.forEach(t=>counts[t.cat]=(counts[t.cat]||0)+1);document.querySelectorAll('[data-count]').forEach(e=>e.textContent=(counts[e.dataset.count]||0).toLocaleString('fa-IR')+' قالب');render()}catch(e){console.error(e);document.getElementById('st').textContent='خطا';document.getElementById('list').className='notice';document.getElementById('list').innerHTML='فهرست قالب‌ها دریافت نشد. برای کشف خودکار قالب‌ها، دسترسی فهرست فایل‌ها و CORS دامنه <b>themes.freethemes.ir</b> باید فعال باشد.'}})();
+(async()=>{try{data=build(await listAll());document.getElementById('st').textContent='آماده';const counts={};data.forEach(t=>counts[t.cat]=(counts[t.cat]||0)+1);document.querySelectorAll('[data-count]').forEach(e=>e.textContent=(counts[e.dataset.count]||0).toLocaleString('fa-IR')+' قالب');render()}catch(e){console.error(e);document.getElementById('st').textContent='خطا';document.getElementById('list').className='notice';document.getElementById('list').innerHTML='فهرست قالب‌ها دریافت نشد. اتصال فهرست فایل‌های آرشیو برقرار نیست؛ دسترسی ListObjects و CORS در سرویس ذخیره‌سازی باید فعال باشد.'}})();
 </script>
 
 <script type="application/ld+json">
