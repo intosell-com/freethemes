@@ -1,152 +1,102 @@
 [
   {
     "slug": "shop",
-    "name": "فروشگاهی",
-    "title": "قالب‌های فروشگاهی",
-    "url": "https://freethemes.ir/?category=shop"
+    "name": "فروشگاهی"
   },
   {
     "slug": "business",
-    "name": "شرکتی",
-    "title": "قالب‌های شرکتی",
-    "url": "https://freethemes.ir/?category=business"
+    "name": "شرکتی"
   },
   {
     "slug": "admin",
-    "name": "مدیریت",
-    "title": "قالب‌های مدیریت",
-    "url": "https://freethemes.ir/?category=admin"
+    "name": "مدیریت"
   },
   {
     "slug": "onepage",
-    "name": "تک صفحه‌ای",
-    "title": "قالب‌های تک صفحه‌ای",
-    "url": "https://freethemes.ir/?category=onepage"
+    "name": "تک صفحه‌ای"
   },
   {
     "slug": "personal",
-    "name": "شخصی",
-    "title": "قالب‌های شخصی",
-    "url": "https://freethemes.ir/?category=personal"
+    "name": "شخصی"
   },
   {
     "slug": "elearning",
-    "name": "آموزشی",
-    "title": "قالب‌های آموزشی",
-    "url": "https://freethemes.ir/?category=elearning"
+    "name": "آموزشی"
   },
   {
     "slug": "landing",
-    "name": "لندینگ",
-    "title": "قالب‌های لندینگ",
-    "url": "https://freethemes.ir/?category=landing"
+    "name": "لندینگ"
   },
   {
     "slug": "coming-soon",
-    "name": "در دست ساخت",
-    "title": "قالب‌های در دست ساخت",
-    "url": "https://freethemes.ir/?category=coming-soon"
+    "name": "در دست ساخت"
   },
   {
     "slug": "multipage",
-    "name": "چند منظوره",
-    "title": "قالب‌های چند منظوره",
-    "url": "https://freethemes.ir/?category=multipage"
+    "name": "چند منظوره"
   },
   {
     "slug": "news",
-    "name": "خبری",
-    "title": "قالب‌های خبری",
-    "url": "https://freethemes.ir/?category=news"
+    "name": "خبری"
   },
   {
     "slug": "portfolio",
-    "name": "گالری",
-    "title": "قالب‌های گالری",
-    "url": "https://freethemes.ir/?category=portfolio"
+    "name": "گالری"
   },
   {
     "slug": "creative",
-    "name": "خلاقانه",
-    "title": "قالب‌های خلاقانه",
-    "url": "https://freethemes.ir/?category=creative"
+    "name": "خلاقانه"
   },
   {
     "slug": "entertainment",
-    "name": "سرگرمی",
-    "title": "قالب‌های سرگرمی",
-    "url": "https://freethemes.ir/?category=entertainment"
+    "name": "سرگرمی"
   },
   {
     "slug": "mobile",
-    "name": "موبایل",
-    "title": "قالب‌های موبایل",
-    "url": "https://freethemes.ir/?category=mobile"
+    "name": "موبایل"
   },
   {
     "slug": "hosting",
-    "name": "هاستینگ",
-    "title": "قالب‌های هاستینگ",
-    "url": "https://freethemes.ir/?category=hosting"
+    "name": "هاستینگ"
   },
   {
     "slug": "login",
-    "name": "صفحه ورود",
-    "title": "قالب‌های صفحه ورود",
-    "url": "https://freethemes.ir/?category=login"
+    "name": "صفحه ورود"
   },
   {
     "slug": "404",
-    "name": "۴۰۴",
-    "title": "قالب‌های ۴۰۴",
-    "url": "https://freethemes.ir/?category=404"
+    "name": "۴۰۴"
   },
   {
     "slug": "domain-sale",
-    "name": "فروش دامنه",
-    "title": "قالب‌های فروش دامنه",
-    "url": "https://freethemes.ir/?category=domain-sale"
+    "name": "فروش دامنه"
   },
   {
     "slug": "real-estate",
-    "name": "املاک",
-    "title": "قالب‌های املاک",
-    "url": "https://freethemes.ir/?category=real-estate"
+    "name": "املاک"
   },
   {
     "slug": "hotel",
-    "name": "هتل",
-    "title": "قالب‌های هتل",
-    "url": "https://freethemes.ir/?category=hotel"
+    "name": "هتل"
   },
   {
     "slug": "guild",
-    "name": "اصناف",
-    "title": "قالب‌های اصناف",
-    "url": "https://freethemes.ir/?category=guild"
+    "name": "اصناف"
   },
   {
     "slug": "music-movie",
-    "name": "موزیک و فیلم",
-    "title": "قالب‌های موزیک و فیلم",
-    "url": "https://freethemes.ir/?category=music-movie"
+    "name": "موزیک و فیلم"
   },
   {
     "slug": "listing",
-    "name": "آگهی",
-    "title": "قالب‌های آگهی",
-    "url": "https://freethemes.ir/?category=listing"
+    "name": "آگهی"
   },
   {
     "slug": "medical",
-    "name": "پزشکی",
-    "title": "قالب‌های پزشکی",
-    "url": "https://freethemes.ir/?category=medical"
+    "name": "پزشکی"
   },
   {
     "slug": "special-pages",
-    "name": "صفحات خاص",
-    "title": "قالب‌های صفحات خاص",
-    "url": "https://freethemes.ir/?category=special-pages"
+    "name": "صفحات خاص"
   }
 ]
