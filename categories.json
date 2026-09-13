@@ -2,151 +2,126 @@
   {
     "slug": "shop",
     "name": "فروشگاهی",
-    "description": "فروش آنلاین و فروشگاه اینترنتی",
-    "url": "?category=shop"
+    "url": "https://freethemes.ir/?category=shop"
   },
   {
     "slug": "business",
     "name": "شرکتی",
-    "description": "سایت معرفی شرکت و کسب‌وکار",
-    "url": "?category=business"
+    "url": "https://freethemes.ir/?category=business"
   },
   {
     "slug": "admin",
     "name": "مدیریت",
-    "description": "داشبورد و پنل‌های مدیریتی",
-    "url": "?category=admin"
+    "url": "https://freethemes.ir/?category=admin"
   },
   {
     "slug": "onepage",
     "name": "تک صفحه‌ای",
-    "description": "وب‌سایت‌های تک‌صفحه‌ای",
-    "url": "?category=onepage"
+    "url": "https://freethemes.ir/?category=onepage"
   },
   {
     "slug": "personal",
     "name": "شخصی",
-    "description": "رزومه و معرفی شخصی",
-    "url": "?category=personal"
+    "url": "https://freethemes.ir/?category=personal"
   },
   {
     "slug": "elearning",
     "name": "آموزشی",
-    "description": "آموزشگاه و پلتفرم آموزشی",
-    "url": "?category=elearning"
+    "url": "https://freethemes.ir/?category=elearning"
   },
   {
     "slug": "landing",
     "name": "لندینگ",
-    "description": "صفحات فرود و کمپین",
-    "url": "?category=landing"
+    "url": "https://freethemes.ir/?category=landing"
   },
   {
     "slug": "coming-soon",
     "name": "در دست ساخت",
-    "description": "صفحات معرفی و پیش از راه‌اندازی",
-    "url": "?category=coming-soon"
+    "url": "https://freethemes.ir/?category=coming-soon"
   },
   {
     "slug": "multipage",
     "name": "چند منظوره",
-    "description": "قالب‌های چندمنظوره",
-    "url": "?category=multipage"
+    "url": "https://freethemes.ir/?category=multipage"
   },
   {
     "slug": "news",
     "name": "خبری",
-    "description": "مجله و وب‌سایت خبری",
-    "url": "?category=news"
+    "url": "https://freethemes.ir/?category=news"
   },
   {
     "slug": "portfolio",
     "name": "گالری",
-    "description": "نمونه‌کار و پورتفولیو",
-    "url": "?category=portfolio"
+    "url": "https://freethemes.ir/?category=portfolio"
   },
   {
     "slug": "creative",
     "name": "خلاقانه",
-    "description": "تجربه‌های خلاق و متفاوت",
-    "url": "?category=creative"
+    "url": "https://freethemes.ir/?category=creative"
   },
   {
     "slug": "entertainment",
     "name": "سرگرمی",
-    "description": "سرگرمی و محتوای تعاملی",
-    "url": "?category=entertainment"
+    "url": "https://freethemes.ir/?category=entertainment"
   },
   {
     "slug": "mobile",
     "name": "موبایل",
-    "description": "معرفی اپلیکیشن و محصولات موبایلی",
-    "url": "?category=mobile"
+    "url": "https://freethemes.ir/?category=mobile"
   },
   {
     "slug": "hosting",
     "name": "هاستینگ",
-    "description": "هاست، دامنه و خدمات زیرساخت",
-    "url": "?category=hosting"
+    "url": "https://freethemes.ir/?category=hosting"
   },
   {
     "slug": "login",
     "name": "صفحه ورود",
-    "description": "ورود، ثبت‌نام و احراز هویت",
-    "url": "?category=login"
+    "url": "https://freethemes.ir/?category=login"
   },
   {
     "slug": "404",
     "name": "۴۰۴",
-    "description": "صفحات خطای سفارشی",
-    "url": "?category=404"
+    "url": "https://freethemes.ir/?category=404"
   },
   {
     "slug": "domain-sale",
     "name": "فروش دامنه",
-    "description": "صفحات فروش و معرفی دامنه",
-    "url": "?category=domain-sale"
+    "url": "https://freethemes.ir/?category=domain-sale"
   },
   {
     "slug": "real-estate",
     "name": "املاک",
-    "description": "املاک و پروژه‌های ساختمانی",
-    "url": "?category=real-estate"
+    "url": "https://freethemes.ir/?category=real-estate"
   },
   {
     "slug": "hotel",
     "name": "هتل",
-    "description": "هتل، اقامتگاه و رزرو",
-    "url": "?category=hotel"
+    "url": "https://freethemes.ir/?category=hotel"
   },
   {
     "slug": "guild",
     "name": "اصناف",
-    "description": "کسب‌وکارهای صنفی",
-    "url": "?category=guild"
+    "url": "https://freethemes.ir/?category=guild"
   },
   {
     "slug": "music-movie",
     "name": "موزیک و فیلم",
-    "description": "موسیقی، فیلم و رسانه",
-    "url": "?category=music-movie"
+    "url": "https://freethemes.ir/?category=music-movie"
   },
   {
     "slug": "listing",
     "name": "آگهی",
-    "description": "آگهی و دایرکتوری",
-    "url": "?category=listing"
+    "url": "https://freethemes.ir/?category=listing"
   },
   {
     "slug": "medical",
     "name": "پزشکی",
-    "description": "پزشکان، کلینیک و سلامت",
-    "url": "?category=medical"
+    "url": "https://freethemes.ir/?category=medical"
   },
   {
     "slug": "special-pages",
     "name": "صفحات خاص",
-    "description": "صفحات ویژه و کاربردی",
-    "url": "?category=special-pages"
+    "url": "https://freethemes.ir/?category=special-pages"
   }
 ]
