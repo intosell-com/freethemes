@@ -1,1 +1,0 @@
-فقط index-*.html وارد آرشیو می‌شود. مثال: Relax/index-shop-digikala.html => دسته shop => فروشگاهی. هر فولدر می‌تواند چند دسته داشته باشد. templates.json توسط generate-templates.mjs ساخته می‌شود.
